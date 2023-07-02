@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Plurk GIFs",
+    "version": "0.1",
+    "description" :"Adding a GIF search into Plurk",
+    
+    "content_scripts": [
+        {
+            "matches":["https://*.plurk.com/*"],
+            "js":["contentScript.js"]
+        }
+    ],
+    "background":{
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources": [
+        {
+          "resources": [
+            "assets/gifButton.png"
+          ],
+          "matches": ["https://*.plurk.com/*"]
+        }
+      ],
+      "action": {
+        "default_icon": {
+          "16": "assets/gifButton.png",
+          "24": "assets/gifButton.png",
+          "32": "assets/gifButton.png"
+        },
+        "default_title": "Plurk GIFs"
+      }
+}
